@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celebrate Diwali with a vibrant background video, festive music, and beautiful decorations.">
+    <meta name="keywords" content="Diwali, festival, celebration, lights, music, culture">
+    <title>Diwali Celebration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background video with audio -->
+    <div class="video-container">
+        <video id="background-video" autoplay muted loop playsinline>
+            <source src="1508216-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <audio id="diwali-audio" controls autoplay loop>
+            <source src="diwali-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="container">
+        <div class="lantern left-lantern"></div>
+        <div class="lantern right-lantern"></div>
+
+        <div class="image-container">
+            <img src="/diwali-image.png" alt="Diwali Greeting Card" class="diwali-image">
+        </div>
+
+        <h1 class="diwali-message">Happy Diwali!</h1>
+        <p class="diwali-messagee"> May this Diwali bring you peace, happiness, and the warmth of loved ones</p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Error handling for video and audio
+        document.getElementById('background-video').addEventListener('error', () => {
+            alert('Background video failed to load.');
+        });
+
+        document.getElementById('diwali-audio').addEventListener('error', () => {
+            alert('Audio track failed to load.');
+        });
+    </script>
+</body>
+</html>

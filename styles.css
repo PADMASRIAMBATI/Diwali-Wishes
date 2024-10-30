@@ -1,0 +1,174 @@
+/* Resetting default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: black; /* Black background for the page */
+    overflow: hidden;
+}
+
+/* Background video container */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the video is behind other elements */
+    overflow: hidden;
+    pointer-events: none; /* Prevent interactions */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Make video semi-transparent */
+}
+
+/* Add a black overlay to darken the video */
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    pointer-events: none; /* Prevent interactions */
+}
+
+/* Audio controls (hidden, but it plays in the background) */
+audio {
+    display: none;
+}
+
+/* Diwali content styles */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Lanterns */
+.lantern {
+    position: absolute;
+    width: 100px;
+    height: 180px;
+    background: linear-gradient(180deg, #ff6f61, #ffcc00);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.6), inset 0 0 20px rgba(255, 204, 0, 0.3);
+    animation: swing 2s ease-in-out infinite alternate;
+}
+
+.lantern:before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #ff6f61; /* Lantern top color */
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 102, 102, 0.8);
+}
+
+.lantern:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 204, 0, 0.9) 0%, rgba(255, 204, 0, 0) 70%);
+    border-radius: 5px;
+}
+
+.left-lantern {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-5deg);
+}
+
+.right-lantern {
+    top: 10%;
+    right: 10%;
+    transform: rotate(5deg);
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(-10deg);
+    }
+    
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+/* Diya and flame */
+
+
+@keyframes scaleImage {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+}
+
+/* Mandala */
+.mandala {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px dashed #ffd700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: rotateMandala 10s linear infinite;
+}
+
+@keyframes rotateMandala {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Diwali message */
+.diwali-message {
+    margin-top: 20px;
+    font-size: 48px;
+    color: #ffd166;
+    text-shadow: 0 0 15px #ff6d00, 0 0 30px #ffba08;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px #ff6d00, 0 0 30px #ffba08; }
+    100% { text-shadow: 0 0 30px #ff4d00, 0 0 60px #ffd166; }
+}
+
+.diwali-messagee {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #ffd166;
+    text-shadow: 0 0 15px #ff6d00, 0 0 30px #ffba08;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px #ff6d00, 0 0 30px #ffba08; }
+    100% { text-shadow: 0 0 30px #ff4d00, 0 0 60px #ffd166; }
+}
